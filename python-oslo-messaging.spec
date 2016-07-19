@@ -220,8 +220,18 @@ rm -rf {test-,}requirements.txt
 %install
 %if 0%{?with_python3}
 %py3_install
+for i in zmq-{broker,proxy} send-notification; do
+mv %{buildroot}%{_bindir}/oslo-messaging-$i %{buildroot}%{_bindir}/oslo-messaging-$i-%{python3_version}
+ln -s ./oslo-messaging-$i-%{python3_version} %{buildroot}%{_bindir}/oslo-messaging-$i-3
+done
 %endif
 %py2_install
+
+for i in zmq-{broker,proxy} send-notification; do
+mv %{buildroot}%{_bindir}/oslo-messaging-$i %{buildroot}%{_bindir}/oslo-messaging-$i-%{python2_version}
+ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i-2
+ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i
+done
 
 export PYTHONPATH="$( pwd ):$PYTHONPATH"
 pushd doc
@@ -246,6 +256,10 @@ rm -rf .testrepository
 %{python2_sitelib}/*.egg-info
 %{_bindir}/oslo-messaging-zmq-broker
 %{_bindir}/oslo-messaging-zmq-proxy
+%{_bindir}/oslo-messaging-send-notification
+%{_bindir}/oslo-messaging-zmq-broker-2*
+%{_bindir}/oslo-messaging-zmq-proxy-2*
+%{_bindir}/oslo-messaging-send-notification-2*
 %exclude %{python2_sitelib}/oslo_messaging/tests
 
 %files -n python-%{pkg_name}-doc
@@ -261,6 +275,9 @@ rm -rf .testrepository
 %doc README.rst
 %{python3_sitelib}/oslo_messaging
 %{python3_sitelib}/*.egg-info
+%{_bindir}/oslo-messaging-zmq-broker-3*
+%{_bindir}/oslo-messaging-zmq-proxy-3*
+%{_bindir}/oslo-messaging-send-notification-3*
 %exclude %{python3_sitelib}/oslo_messaging/tests
 
 %files -n python3-%{pkg_name}-tests
