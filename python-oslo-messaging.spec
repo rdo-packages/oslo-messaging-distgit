@@ -8,7 +8,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:       python-oslo-messaging
-Version:    4.5.0
+Version:    4.6.1
 Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
@@ -269,6 +269,9 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Wed Sep 07 2016 Haikel Guemar <hguemar@fedoraproject.org> 4.6.1-1
+- Update to 4.6.1
+
 * Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 4.5.0-
 - Update to 4.5.0
 
