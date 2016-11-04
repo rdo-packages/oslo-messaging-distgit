@@ -44,6 +44,7 @@ BuildRequires: python-oslo-service
 BuildRequires: python-oslo-utils
 BuildRequires: python-oslotest
 BuildRequires: python-subunit
+BuildRequires: python-tenacity
 BuildRequires: python-testrepository
 BuildRequires: python-testscenarios
 BuildRequires: python-testtools
@@ -61,6 +62,7 @@ Requires:   python-oslo-log
 Requires:   python-oslo-middleware
 Requires:   python-six >= 1.9.0
 Requires:   python-stevedore
+Requires:   python-tenacity
 Requires:   PyYAML
 Requires:   python-kombu >= 3.0.7
 Requires:   python-babel
@@ -146,6 +148,7 @@ BuildRequires: python3-oslo-serialization
 BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslotest
+BuildRequires: python3-tenacity
 BuildRequires: python3-testrepository
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
@@ -163,6 +166,7 @@ Requires:   python3-oslo-log
 Requires:   python3-oslo-middleware
 Requires:   python3-six >= 1.9.0
 Requires:   python3-stevedore
+Requires:   python3-tenacity
 Requires:   python3-PyYAML
 Requires:   python3-kombu >= 3.0.7
 Requires:   python3-babel
