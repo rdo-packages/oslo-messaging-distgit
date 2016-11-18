@@ -43,6 +43,7 @@ BuildRequires: python-oslo-serialization
 BuildRequires: python-oslo-service
 BuildRequires: python-oslo-utils
 BuildRequires: python-oslotest
+BuildRequires: python-pyngus
 BuildRequires: python-subunit
 BuildRequires: python-tenacity
 BuildRequires: python-testrepository
@@ -70,6 +71,7 @@ Requires:   python-eventlet
 Requires:   python-cachetools
 Requires:   python-pika_pool
 Requires:   python-webob
+Requires:   python-pyngus
 
 %description -n python2-%{pkg_name}
 The Oslo project intends to produce a python library containing
@@ -173,6 +175,7 @@ Requires:   python3-babel
 Requires:   python3-eventlet
 Requires:   python3-cachetools
 Requires:   python3-webob
+Requires:   python3-pyngus
 
 %description -n python3-%{pkg_name}
 The Oslo project intends to produce a python library containing
