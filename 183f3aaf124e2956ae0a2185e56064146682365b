@@ -22,6 +22,30 @@
       "revId": "183f3aaf124e2956ae0a2185e56064146682365b",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5adbc538_d7cab1a0",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 315
+      },
+      "writtenOn": "2016-11-29T20:13:50Z",
+      "side": 1,
+      "message": "Yeah you\u0027re right, it\u0027s not necessary as a BuildRequires.  I\u0027ll remove it.",
+      "parentUuid": "5adbc538_a0e79ee3",
+      "range": {
+        "startLine": 46,
+        "startChar": 6,
+        "endLine": 46,
+        "endChar": 28
+      },
+      "revId": "183f3aaf124e2956ae0a2185e56064146682365b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
