@@ -7,7 +7,7 @@
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    5.17.0
+Version:    5.17.1
 Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
@@ -304,6 +304,9 @@ rm -rf .testrepository
 %endif
 
 %changelog
+* Wed Mar 01 2017 Alfredo Moralejo <amoralej@redhat.com> 5.17.1-1
+- Update to 5.17.1
+
 * Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 5.17.0-1
 - Update to 5.17.0
 
