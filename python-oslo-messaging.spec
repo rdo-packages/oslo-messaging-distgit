@@ -160,13 +160,12 @@ BuildRequires: python3-testrepository
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
 
-Requires:   python-amqp >= 1.4.0
-Requires:   python-debtcollector >= 1.2.0
+Requires:   python3-amqp >= 1.4.0
+Requires:   python3-debtcollector >= 1.2.0
 Requires:   python3-setuptools
 Requires:   python3-iso8601
-Requires:   python-futures >= 3.0
 Requires:   python3-futurist >= 0.11.0
-Requires:   python-monotonic >= 0.6
+Requires:   python3-monotonic >= 0.6
 Requires:   python3-oslo-config >= 2:3.14.0
 Requires:   python3-oslo-context >= 2.9.0
 Requires:   python3-oslo-utils >= 3.18.0
@@ -183,8 +182,8 @@ Requires:   python3-kombu >= 3.0.25
 Requires:   python3-babel
 Requires:   python3-eventlet
 Requires:   python3-cachetools
-Requires:   python-pika >= 0.10.0
-Requires:   python-pika_pool
+Requires:   python3-pika >= 0.10.0
+Requires:   python3-pika_pool
 Requires:   python3-webob
 Requires:   python3-pyngus
 
