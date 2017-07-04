@@ -91,7 +91,7 @@ different messaging transports.
 Summary:    Documentation for OpenStack common messaging library
 
 BuildRequires: python-sphinx
-BuildRequires: python-oslo-sphinx >= 2.5.0
+BuildRequires: python-openstackdocstheme
 
 # for API autodoc
 BuildRequires: python-iso8601
@@ -252,10 +252,7 @@ ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messagi
 ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i
 done
 
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-pushd doc
-sphinx-build -b html -d build/doctrees   source build/html
-popd
+%{__python2} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.buildinfo
 
