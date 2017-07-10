@@ -92,6 +92,7 @@ Summary:    Documentation for OpenStack common messaging library
 
 BuildRequires: python-sphinx
 BuildRequires: python-openstackdocstheme
+BuildRequires: python-oslo-sphinx
 
 # for API autodoc
 BuildRequires: python-iso8601
@@ -300,4 +301,3 @@ rm -rf .testrepository
 %endif
 
 %changelog
-
