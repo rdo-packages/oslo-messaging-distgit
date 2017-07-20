@@ -110,6 +110,7 @@ BuildRequires: python-babel
 BuildRequires: python-fixtures
 BuildRequires: python-kombu >= 3.0.7
 BuildRequires: python-pika_pool
+BuildRequires: python-pyngus
 
 
 %description -n python-%{pkg_name}-doc
