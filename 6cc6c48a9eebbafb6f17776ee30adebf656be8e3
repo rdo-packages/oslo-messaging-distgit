@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_ad85ddae",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-08-04T07:52:16Z",
+      "side": 1,
+      "message": "upstream requirements is 3.27.0 but that\u0027s not in cbs",
+      "range": {
+        "startLine": 67,
+        "startChar": 39,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "6cc6c48a9eebbafb6f17776ee30adebf656be8e3",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
