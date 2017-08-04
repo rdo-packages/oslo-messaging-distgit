@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_70b02ef5",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-04T10:11:47Z",
+      "side": 1,
+      "message": "This should be 3.27.0",
+      "range": {
+        "startLine": 67,
+        "startChar": 38,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "8a5811569fd0cb336afc21e67082be11b095dad1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9094ba45",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-08-04T10:11:47Z",
+      "side": 1,
+      "message": "Don\u0027t worry too much about requirements for -tests subpackages. It depends on python-oslo-messaging which has explicit dep so don\u0027t needed. You can ignore it.",
+      "revId": "8a5811569fd0cb336afc21e67082be11b095dad1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
