@@ -33,7 +33,7 @@ BuildRequires: python-zmq
 BuildRequires: python-fixtures
 BuildRequires: python-hacking
 BuildRequires: python-kafka
-BuildRequires: python-kombu >= 3.0.7
+BuildRequires: python-kombu >= 4.0.0
 BuildRequires: python-mock
 BuildRequires: python-mox3
 BuildRequires: python-oslo-config
@@ -50,32 +50,32 @@ BuildRequires: python-testscenarios
 BuildRequires: python-testtools
 
 
-Requires:   python-amqp >= 1.4.0
+Requires:   python-amqp >= 2.1.0
 Requires:   python-debtcollector >= 1.2.0
 Requires:   python-setuptools
 Requires:   python-iso8601
 Requires:   python-futures >= 3.0
 Requires:   python-futurist >= 0.11.0
 Requires:   python-monotonic >= 0.6
-Requires:   python-oslo-config >= 2:3.14.0
+Requires:   python-oslo-config >= 2:4.0.0
 Requires:   python-oslo-context >= 2.9.0
-Requires:   python-oslo-utils >= 3.18.0
+Requires:   python-oslo-utils >= 3.20.0
 Requires:   python-oslo-serialization >= 1.10.0
 Requires:   python-oslo-service >= 1.10.0
 Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-oslo-log >= 3.11.0
-Requires:   python-oslo-middleware >= 3.0.0
+Requires:   python-oslo-log >= 3.22.0
+Requires:   python-oslo-middleware >= 3.23.0
 Requires:   python-six >= 1.9.0
-Requires:   python-stevedore
+Requires:   python-stevedore >= 1.20.0
 Requires:   python-tenacity
 Requires:   PyYAML
-Requires:   python-kombu >= 3.0.25
+Requires:   python-kombu >= 4.0.0
 Requires:   python-babel
 Requires:   python-eventlet
 Requires:   python-cachetools
 Requires:   python-pika >= 0.10.0
 Requires:   python-pika_pool
-Requires:   python-webob
+Requires:   python-webob >= 1.7.1
 Requires:   python-pyngus
 
 %description -n python2-%{pkg_name}
@@ -108,7 +108,7 @@ BuildRequires: python-stevedore
 BuildRequires: PyYAML
 BuildRequires: python-babel
 BuildRequires: python-fixtures
-BuildRequires: python-kombu >= 3.0.7
+BuildRequires: python-kombu >= 4.0.0
 BuildRequires: python-pika_pool
 BuildRequires: python-pyngus
 
@@ -121,12 +121,12 @@ Summary:    Tests for OpenStack common messaging library
 
 Requires:      python-%{pkg_name} = %{version}-%{release}
 Requires:      python-kafka
-Requires:      python-oslo-config
+Requires:      python-oslo-config >= 2:4.0.0
 Requires:      python-oslo-context
-Requires:      python-oslo-middleware
+Requires:      python-oslo-middleware >= 3.23.0
 Requires:      python-oslo-serialization
 Requires:      python-oslo-service
-Requires:      python-oslo-utils
+Requires:      python-oslo-utils >= 3.20.0
 Requires:      python-oslotest
 Requires:      python-testrepository
 Requires:      python-testscenarios
@@ -162,31 +162,31 @@ BuildRequires: python3-testrepository
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
 
-Requires:   python3-amqp >= 1.4.0
+Requires:   python3-amqp >= 2.1.0
 Requires:   python3-debtcollector >= 1.2.0
 Requires:   python3-setuptools
 Requires:   python3-iso8601
 Requires:   python3-futurist >= 0.11.0
 Requires:   python3-monotonic >= 0.6
-Requires:   python3-oslo-config >= 2:3.14.0
+Requires:   python3-oslo-config >= 4.0.0
 Requires:   python3-oslo-context >= 2.9.0
-Requires:   python3-oslo-utils >= 3.18.0
+Requires:   python3-oslo-utils >= 3.20.0
 Requires:   python3-oslo-serialization >= 1.10.0
 Requires:   python3-oslo-service >= 1.10.0
 Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-oslo-log >= 3.11.0
+Requires:   python3-oslo-log >= 3.22.0
 Requires:   python3-oslo-middleware >= 3.0.0
 Requires:   python3-six >= 1.9.0
-Requires:   python3-stevedore
+Requires:   python3-stevedore >= 1.7.1
 Requires:   python3-tenacity
 Requires:   python3-PyYAML
-Requires:   python3-kombu >= 3.0.25
+Requires:   python3-kombu >= 4.0.0
 Requires:   python3-babel
 Requires:   python3-eventlet
 Requires:   python3-cachetools
 Requires:   python3-pika >= 0.10.0
 Requires:   python3-pika_pool
-Requires:   python3-webob
+Requires:   python3-webob >= 1.7.1
 Requires:   python3-pyngus
 
 %description -n python3-%{pkg_name}
