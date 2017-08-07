@@ -52,19 +52,18 @@ BuildRequires: python-testtools
 
 Requires:   python-amqp >= 1.4.0
 Requires:   python-debtcollector >= 1.2.0
-Requires:   python-setuptools
 Requires:   python-iso8601
 Requires:   python-futures >= 3.0
 Requires:   python-futurist >= 0.11.0
 Requires:   python-monotonic >= 0.6
-Requires:   python-oslo-config >= 2:3.14.0
+Requires:   python-oslo-config >= 2:4.0.0
 Requires:   python-oslo-context >= 2.9.0
-Requires:   python-oslo-utils >= 3.18.0
+Requires:   python-oslo-utils >= 3.20.0
 Requires:   python-oslo-serialization >= 1.10.0
 Requires:   python-oslo-service >= 1.10.0
 Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-oslo-log >= 3.11.0
-Requires:   python-oslo-middleware >= 3.0.0
+Requires:   python-oslo-log >= 3.22.0
+Requires:   python-oslo-middleware >= 3.27.0
 Requires:   python-six >= 1.9.0
 Requires:   python-stevedore
 Requires:   python-tenacity
@@ -164,18 +163,17 @@ BuildRequires: python3-testtools
 
 Requires:   python3-amqp >= 1.4.0
 Requires:   python3-debtcollector >= 1.2.0
-Requires:   python3-setuptools
 Requires:   python3-iso8601
 Requires:   python3-futurist >= 0.11.0
 Requires:   python3-monotonic >= 0.6
 Requires:   python3-oslo-config >= 2:3.14.0
 Requires:   python3-oslo-context >= 2.9.0
-Requires:   python3-oslo-utils >= 3.18.0
+Requires:   python3-oslo-utils >= 3.20.0
 Requires:   python3-oslo-serialization >= 1.10.0
 Requires:   python3-oslo-service >= 1.10.0
 Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-oslo-log >= 3.11.0
-Requires:   python3-oslo-middleware >= 3.0.0
+Requires:   python3-oslo-log >= 3.22.0
+Requires:   python3-oslo-middleware >= 3.27.0
 Requires:   python3-six >= 1.9.0
 Requires:   python3-stevedore
 Requires:   python3-tenacity
