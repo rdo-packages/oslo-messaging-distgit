@@ -3,6 +3,9 @@
 %global with_python3 1
 %endif
 
+#guard for including python-pyngus (OSP 12 does not ship python-pyngus)
+%global rhosp 0
+
 %global pypi_name oslo.messaging
 %global pkg_name oslo-messaging
 
@@ -76,7 +79,9 @@ Requires:   python-cachetools
 Requires:   python-pika >= 0.10.0
 Requires:   python-pika_pool
 Requires:   python-webob >= 1.7.1
+%if 0%{rhosp} == 0
 Requires:   python-pyngus
+%endif
 
 %description -n python2-%{pkg_name}
 The Oslo project intends to produce a python library containing
@@ -110,7 +115,9 @@ BuildRequires: python-babel
 BuildRequires: python-fixtures
 BuildRequires: python-kombu >= 1:4.0.0
 BuildRequires: python-pika_pool
+%if 0%{rhosp} == 0
 BuildRequires: python-pyngus
+%endif
 
 
 %description -n python-%{pkg_name}-doc
@@ -187,7 +194,9 @@ Requires:   python3-cachetools
 Requires:   python3-pika >= 0.10.0
 Requires:   python3-pika_pool
 Requires:   python3-webob >= 1.7.1
+%if 0%{rhosp} == 0
 Requires:   python3-pyngus
+%endif
 
 %description -n python3-%{pkg_name}
 The Oslo project intends to produce a python library containing
