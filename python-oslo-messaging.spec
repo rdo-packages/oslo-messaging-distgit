@@ -6,6 +6,15 @@
 #guard for including python-pyngus (OSP 12 does not ship python-pyngus)
 %global rhosp 0
 
+%global common_desc \
+The Oslo project intends to produce a python library containing \
+infrastructure code shared by OpenStack projects. The APIs provided \
+by the project should be high quality, stable, consistent and generally \
+useful.
+
+%global common_desc1 \
+Tests for the OpenStack common messaging library.
+
 %global pypi_name oslo.messaging
 %global pkg_name oslo-messaging
 
@@ -85,10 +94,7 @@ Requires:   python-pyngus
 %endif
 
 %description -n python2-%{pkg_name}
-The Oslo project intends to produce a python library containing
-infrastructure code shared by OpenStack projects. The APIs provided
-by the project should be high quality, stable, consistent and generally
-useful.
+%{common_desc}
 
 The Oslo messaging API supports RPC and notifications over a number of
 different messaging transports.
@@ -143,7 +149,7 @@ Requires:      python-testscenarios
 Requires:      python-testtools
 
 %description -n python2-%{pkg_name}-tests
-Tests for the OpenStack common messaging library.
+%{common_desc1}
 
 %if 0%{?with_python3}
 %package -n python3-%{pkg_name}
@@ -203,10 +209,7 @@ Requires:   python3-pyngus
 %endif
 
 %description -n python3-%{pkg_name}
-The Oslo project intends to produce a python library containing
-infrastructure code shared by OpenStack projects. The APIs provided
-by the project should be high quality, stable, consistent and generally
-useful.
+%{common_desc}
 
 The Oslo messaging API supports RPC and notifications over a number of
 different messaging transports.
@@ -228,14 +231,11 @@ Requires:      python3-testscenarios
 Requires:      python3-testtools
 
 %description -n python3-%{pkg_name}-tests
-Tests for the OpenStack common messaging library.
+%{common_desc1}
 %endif
 
 %description
-The Oslo project intends to produce a python library containing
-infrastructure code shared by OpenStack projects. The APIs provided
-by the project should be high quality, stable, consistent and generally
-useful.
+%{common_desc}
 
 %prep
 # FIXME: workaround required to build
