@@ -2,7 +2,7 @@
 %if 0%{?fedora} >= 24
 %global with_python3 1
 %endif
-
+%global with_doc 1
 #guard for including python-pyngus (OSP 12 does not ship python-pyngus)
 %global rhosp 0
 
@@ -93,6 +93,7 @@ useful.
 The Oslo messaging API supports RPC and notifications over a number of
 different messaging transports.
 
+%if 0%{?with_doc}
 %package -n python-%{pkg_name}-doc
 Summary:    Documentation for OpenStack common messaging library
 
@@ -123,6 +124,7 @@ BuildRequires: python-pyngus
 
 %description -n python-%{pkg_name}-doc
 Documentation for the oslo.messaging library.
+%endif
 
 %package -n python2-%{pkg_name}-tests
 Summary:    Tests for OpenStack common messaging library
@@ -264,9 +266,11 @@ ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messagi
 ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i
 done
 
+%if 0%{?with_doc}
 %{__python2} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.buildinfo
+%endif
 
 %check
 # Four unit tests are failing for amqp1
@@ -289,9 +293,11 @@ rm -rf .testrepository
 %{_bindir}/oslo-messaging-send-notification-2*
 %exclude %{python2_sitelib}/oslo_messaging/tests
 
+%if 0%{?with_doc}
 %files -n python-%{pkg_name}-doc
 %license LICENSE
 %doc doc/build/html
+%endif
 
 %files -n python2-%{pkg_name}-tests
 %{python2_sitelib}/oslo_messaging/tests
