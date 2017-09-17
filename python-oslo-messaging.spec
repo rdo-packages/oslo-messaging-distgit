@@ -178,6 +178,7 @@ BuildRequires: python3-tenacity
 BuildRequires: python3-testrepository
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
+BuildRequires: openstack-macros
 
 Requires:   python3-amqp >= 2.1.0
 Requires:   python3-debtcollector >= 1.2.0
@@ -242,7 +243,7 @@ Requires:      python3-testtools
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # let RPM handle deps
-rm -rf {test-,}requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
