@@ -250,6 +250,12 @@ rm -rf {test-,}requirements.txt
 %py3_build
 %endif
 
+%if 0%{?with_doc}
+%{__python2} setup.py build_sphinx -b html
+# Fix hidden-file-or-dir warnings
+rm -fr doc/build/html/.buildinfo
+%endif
+
 %install
 %if 0%{?with_python3}
 %py3_install
@@ -265,12 +271,6 @@ mv %{buildroot}%{_bindir}/oslo-messaging-$i %{buildroot}%{_bindir}/oslo-messagin
 ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i-2
 ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i
 done
-
-%if 0%{?with_doc}
-%{__python2} setup.py build_sphinx -b html
-# Fix hidden-file-or-dir warnings
-rm -fr doc/build/html/.buildinfo
-%endif
 
 %check
 # Four unit tests are failing for amqp1
