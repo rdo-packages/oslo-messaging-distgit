@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d4c0d97e",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2017-12-12T13:23:27Z",
+      "side": 1,
+      "message": "Need to move this to the top level or duplicate in the python2- section",
+      "range": {
+        "startLine": 181,
+        "startChar": 0,
+        "endLine": 181,
+        "endChar": 31
+      },
+      "revId": "de164bb468506b2088e4bde377755793cb241bf5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
