@@ -35,60 +35,73 @@ Summary:    OpenStack common messaging library
 %{?python_provide:%python_provide python2-%{pkg_name}}
 
 BuildRequires: python2-devel
-BuildRequires: python-setuptools
-BuildRequires: python-pbr
+BuildRequires: python2-setuptools
+BuildRequires: python2-pbr
+BuildRequires: python2-futurist
+# Required for tests
+BuildRequires: python2-fixtures
+BuildRequires: python2-hacking
+BuildRequires: python2-kombu >= 1:4.0.0
+BuildRequires: python2-mock
+BuildRequires: python2-mox3
+BuildRequires: python2-oslo-config
+BuildRequires: python2-oslo-middleware
+BuildRequires: python2-oslo-serialization
+BuildRequires: python2-oslo-service
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-oslotest
+BuildRequires: python2-pifpaf
+BuildRequires: python2-subunit
+BuildRequires: python2-tenacity
+BuildRequires: python2-testtools
+%if 0%{?fedora} > 0
+BuildRequires: python2-cachetools
+BuildRequires: python2-redis
+BuildRequires: python2-zmq
+BuildRequires: python2-kafka
+BuildRequires: python2-testrepository
+BuildRequires: python2-testscenarios
+%else
 BuildRequires: python-cachetools
-BuildRequires: python-futurist
 BuildRequires: python-redis
 BuildRequires: python-zmq
-# Required for tests
-BuildRequires: python-fixtures
-BuildRequires: python-hacking
 BuildRequires: python-kafka
-BuildRequires: python-kombu >= 1:4.0.0
-BuildRequires: python-mock
-BuildRequires: python-mox3
-BuildRequires: python-oslo-config
-BuildRequires: python-oslo-context
-BuildRequires: python-oslo-middleware
-BuildRequires: python-oslo-serialization
-BuildRequires: python-oslo-service
-BuildRequires: python-oslo-utils
-BuildRequires: python-oslotest
-BuildRequires: python-pifpaf
-BuildRequires: python-subunit
-BuildRequires: python-tenacity
 BuildRequires: python-testrepository
 BuildRequires: python-testscenarios
-BuildRequires: python-testtools
+%endif
 
 
-Requires:   python-amqp >= 2.1.0
-Requires:   python-debtcollector >= 1.2.0
-Requires:   python-setuptools
-Requires:   python-iso8601
-Requires:   python-futures >= 3.0
-Requires:   python-futurist >= 0.11.0
-Requires:   python-monotonic >= 0.6
-Requires:   python-oslo-config >= 2:4.0.0
-Requires:   python-oslo-context >= 2.9.0
-Requires:   python-oslo-utils >= 3.20.0
-Requires:   python-oslo-serialization >= 1.10.0
-Requires:   python-oslo-service >= 1.10.0
-Requires:   python-oslo-i18n >= 2.1.0
-Requires:   python-oslo-log >= 3.22.0
-Requires:   python-oslo-middleware >= 3.27.0
-Requires:   python-six >= 1.9.0
-Requires:   python-stevedore >= 1.20.0
-Requires:   python-tenacity
-Requires:   PyYAML
-Requires:   python-kombu >= 1:4.0.0
-Requires:   python-babel
-Requires:   python-eventlet
+Requires:   python2-pbr
+Requires:   python2-amqp >= 2.1.1
+Requires:   python2-debtcollector >= 1.2.0
+Requires:   python2-futurist >= 1.2.0
+Requires:   python2-oslo-config >= 2:5.1.0
+Requires:   python2-oslo-utils >= 3.33.0
+Requires:   python2-oslo-serialization >= 2.18.0
+Requires:   python2-oslo-service >= 1.24.0
+Requires:   python2-oslo-i18n >= 3.15.3
+Requires:   python2-oslo-log >= 3.36.0
+Requires:   python2-oslo-middleware >= 3.31.0
+Requires:   python2-six >= 1.10.0
+Requires:   python2-stevedore >= 1.20.0
+Requires:   python2-tenacity
+Requires:   python2-kombu >= 1:4.0.0
+Requires:   python2-eventlet
+Requires:   python2-pika >= 0.10.0
+Requires:   python2-pika_pool
+%if 0%{?fedora} > 0
+Requires:   python2-cachetools
+Requires:   python2-futures >= 3.0
+Requires:   python2-monotonic >= 0.6
+Requires:   python2-pyyaml
+Requires:   python2-webob >= 1.7.1
+%else
 Requires:   python-cachetools
-Requires:   python-pika >= 0.10.0
-Requires:   python-pika_pool
+Requires:   python-futures >= 3.0
+Requires:   python-monotonic >= 0.6
+Requires:   PyYAML
 Requires:   python-webob >= 1.7.1
+%endif
 %if 0%{rhosp} == 0
 Requires:   python-pyngus
 %endif
@@ -103,26 +116,27 @@ different messaging transports.
 %package -n python-%{pkg_name}-doc
 Summary:    Documentation for OpenStack common messaging library
 
-BuildRequires: python-sphinx
-BuildRequires: python-openstackdocstheme
-BuildRequires: python-oslo-sphinx
+BuildRequires: python2-sphinx
+BuildRequires: python2-openstackdocstheme
+BuildRequires: python2-oslo-sphinx
 
 # for API autodoc
-BuildRequires: python-iso8601
-BuildRequires: python-oslo-config
-BuildRequires: python-oslo-context
-BuildRequires: python-oslo-i18n
-BuildRequires: python-oslo-middleware
-BuildRequires: python-oslo-serialization
-BuildRequires: python-oslo-service
-BuildRequires: python-oslo-utils
-BuildRequires: python-six
-BuildRequires: python-stevedore
+BuildRequires: python2-oslo-config
+BuildRequires: python2-oslo-i18n
+BuildRequires: python2-oslo-middleware
+BuildRequires: python2-oslo-serialization
+BuildRequires: python2-oslo-service
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-six
+BuildRequires: python2-stevedore
+BuildRequires: python2-fixtures
+BuildRequires: python2-kombu >= 1:4.0.0
+BuildRequires: python2-pika_pool
+%if 0%{?fedora} > 0
+BuildRequires: python2-pyyaml
+%else
 BuildRequires: PyYAML
-BuildRequires: python-babel
-BuildRequires: python-fixtures
-BuildRequires: python-kombu >= 1:4.0.0
-BuildRequires: python-pika_pool
+%endif
 %if 0%{rhosp} == 0
 BuildRequires: python-pyngus
 %endif
@@ -135,18 +149,23 @@ Documentation for the oslo.messaging library.
 %package -n python2-%{pkg_name}-tests
 Summary:    Tests for OpenStack common messaging library
 
-Requires:      python-%{pkg_name} = %{version}-%{release}
+Requires:      python2-%{pkg_name} = %{version}-%{release}
+Requires:      python2-oslo-config
+Requires:      python2-oslo-middleware
+Requires:      python2-oslo-serialization
+Requires:      python2-oslo-service
+Requires:      python2-oslo-utils
+Requires:      python2-oslotest
+Requires:      python2-testtools
+%if 0%{?fedora} > 0
+Requires:      python2-kafka
+Requires:      python2-testrepository
+Requires:      python2-testscenarios
+%else
 Requires:      python-kafka
-Requires:      python-oslo-config
-Requires:      python-oslo-context
-Requires:      python-oslo-middleware
-Requires:      python-oslo-serialization
-Requires:      python-oslo-service
-Requires:      python-oslo-utils
-Requires:      python-oslotest
 Requires:      python-testrepository
 Requires:      python-testscenarios
-Requires:      python-testtools
+%endif
 
 %description -n python2-%{pkg_name}-tests
 %{common_desc1}
@@ -167,7 +186,6 @@ BuildRequires: python3-zmq
 # Required for tests
 BuildRequires: python3-kafka
 BuildRequires: python3-oslo-config
-BuildRequires: python3-oslo-context
 BuildRequires: python3-oslo-middleware
 BuildRequires: python3-oslo-serialization
 BuildRequires: python3-oslo-service
@@ -179,26 +197,23 @@ BuildRequires: python3-testrepository
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
 
-Requires:   python3-amqp >= 2.1.0
+Requires:   python3-pbr
+Requires:   python3-amqp >= 2.1.1
 Requires:   python3-debtcollector >= 1.2.0
-Requires:   python3-setuptools
-Requires:   python3-iso8601
-Requires:   python3-futurist >= 0.11.0
+Requires:   python3-futurist >= 1.2.0
 Requires:   python3-monotonic >= 0.6
-Requires:   python3-oslo-config >= 2:4.0.0
-Requires:   python3-oslo-context >= 2.9.0
-Requires:   python3-oslo-utils >= 3.20.0
-Requires:   python3-oslo-serialization >= 1.10.0
-Requires:   python3-oslo-service >= 1.10.0
-Requires:   python3-oslo-i18n >= 2.1.0
-Requires:   python3-oslo-log >= 3.22.0
-Requires:   python3-oslo-middleware >= 3.27.0
-Requires:   python3-six >= 1.9.0
+Requires:   python3-oslo-config >= 2:5.1.0
+Requires:   python3-oslo-utils >= 3.33.0
+Requires:   python3-oslo-serialization >= 2.18.0
+Requires:   python3-oslo-service >= 1.24.0
+Requires:   python3-oslo-i18n >= 3.15.3
+Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-middleware >= 3.31.0
+Requires:   python3-six >= 1.10.0
 Requires:   python3-stevedore >= 1.20.0
 Requires:   python3-tenacity
 Requires:   python3-PyYAML
 Requires:   python3-kombu >= 1:4.0.0
-Requires:   python3-babel
 Requires:   python3-eventlet
 Requires:   python3-cachetools
 Requires:   python3-pika >= 0.10.0
@@ -220,7 +235,6 @@ Summary:    Tests for OpenStack common messaging library
 Requires:      python3-%{pkg_name} = %{version}-%{release}
 Requires:      python3-kafka
 Requires:      python3-oslo-config
-Requires:      python3-oslo-context
 Requires:      python3-oslo-middleware
 Requires:      python3-oslo-serialization
 Requires:      python3-oslo-service
