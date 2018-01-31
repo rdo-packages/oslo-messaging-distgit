@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_ae3f87d5",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-01-31T17:27:10Z",
+      "side": 1,
+      "message": "this shoud be python2-%{pkg_name}, shouldn\u0027t it?",
+      "range": {
+        "startLine": 152,
+        "startChar": 15,
+        "endLine": 152,
+        "endChar": 33
+      },
+      "revId": "c84c4cf5501658374abfd190508670cfa2b27f6b",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
