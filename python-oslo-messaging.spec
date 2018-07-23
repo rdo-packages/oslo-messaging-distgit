@@ -72,10 +72,10 @@ BuildRequires: python-testscenarios
 
 
 Requires:   python2-pbr
-Requires:   python2-amqp >= 2.1.1
+Requires:   python2-amqp >= 2.3.0
 Requires:   python2-debtcollector >= 1.2.0
 Requires:   python2-futurist >= 1.2.0
-Requires:   python2-oslo-config >= 2:5.1.0
+Requires:   python2-oslo-config >= 2:5.2.0
 Requires:   python2-oslo-utils >= 3.33.0
 Requires:   python2-oslo-serialization >= 2.18.0
 Requires:   python2-oslo-service >= 1.24.0
@@ -87,8 +87,6 @@ Requires:   python2-stevedore >= 1.20.0
 Requires:   python2-tenacity
 Requires:   python2-kombu >= 1:4.0.0
 Requires:   python2-eventlet
-Requires:   python2-pika >= 0.10.0
-Requires:   python2-pika_pool
 %if 0%{?fedora} > 0
 Requires:   python2-cachetools
 Requires:   python2-futures >= 3.0
@@ -131,7 +129,6 @@ BuildRequires: python2-six
 BuildRequires: python2-stevedore
 BuildRequires: python2-fixtures
 BuildRequires: python2-kombu >= 1:4.0.0
-BuildRequires: python2-pika_pool
 %if 0%{?fedora} > 0
 BuildRequires: python2-pyyaml
 %else
@@ -198,11 +195,11 @@ BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
 
 Requires:   python3-pbr
-Requires:   python3-amqp >= 2.1.1
+Requires:   python3-amqp >= 2.3.0
 Requires:   python3-debtcollector >= 1.2.0
 Requires:   python3-futurist >= 1.2.0
 Requires:   python3-monotonic >= 0.6
-Requires:   python3-oslo-config >= 2:5.1.0
+Requires:   python3-oslo-config >= 2:5.2.0
 Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-service >= 1.24.0
@@ -216,8 +213,6 @@ Requires:   python3-PyYAML
 Requires:   python3-kombu >= 1:4.0.0
 Requires:   python3-eventlet
 Requires:   python3-cachetools
-Requires:   python3-pika >= 0.10.0
-Requires:   python3-pika_pool
 Requires:   python3-webob >= 1.7.1
 %if 0%{rhosp} == 0
 Requires:   python3-pyngus
