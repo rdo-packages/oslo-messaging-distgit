@@ -113,7 +113,6 @@ Summary:    Documentation for OpenStack common messaging library
 
 BuildRequires: python2-sphinx
 BuildRequires: python2-openstackdocstheme
-BuildRequires: python2-oslo-sphinx
 
 # for API autodoc
 BuildRequires: python2-oslo-config
