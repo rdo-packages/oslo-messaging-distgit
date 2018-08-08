@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_0c20b99a",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-08-08T13:15:27Z",
+      "side": 1,
+      "message": "functional?, we explicitely don\u0027t run functional tests during rpmbuild, only unit tests.",
+      "range": {
+        "startLine": 284,
+        "startChar": 42,
+        "endLine": 284,
+        "endChar": 52
+      },
+      "revId": "21dfdf32a559fd6b091b5bd62279b254871830c2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
