@@ -54,19 +54,18 @@ BuildRequires: python2-pifpaf
 BuildRequires: python2-subunit
 BuildRequires: python2-tenacity
 BuildRequires: python2-testtools
+BuildRequires: python2-stestr
 %if 0%{?fedora} > 0
 BuildRequires: python2-cachetools
 BuildRequires: python2-redis
 BuildRequires: python2-zmq
 BuildRequires: python2-kafka
-BuildRequires: python2-testrepository
 BuildRequires: python2-testscenarios
 %else
 BuildRequires: python-cachetools
 BuildRequires: python-redis
 BuildRequires: python-zmq
 BuildRequires: python-kafka
-BuildRequires: python-testrepository
 BuildRequires: python-testscenarios
 %endif
 
@@ -154,13 +153,12 @@ Requires:      python2-oslo-service
 Requires:      python2-oslo-utils
 Requires:      python2-oslotest
 Requires:      python2-testtools
+Requires:      python2-stestr
 %if 0%{?fedora} > 0
 Requires:      python2-kafka
-Requires:      python2-testrepository
 Requires:      python2-testscenarios
 %else
 Requires:      python-kafka
-Requires:      python-testrepository
 Requires:      python-testscenarios
 %endif
 
@@ -190,7 +188,7 @@ BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslotest
 BuildRequires: python3-pifpaf
 BuildRequires: python3-tenacity
-BuildRequires: python3-testrepository
+BuildRequires: python3-stestr
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
 
@@ -235,7 +233,7 @@ Requires:      python3-oslo-serialization
 Requires:      python3-oslo-service
 Requires:      python3-oslo-utils
 Requires:      python3-oslotest
-Requires:      python3-testrepository
+Requires:      python3-stestr
 Requires:      python3-testscenarios
 Requires:      python3-testtools
 
@@ -283,10 +281,9 @@ done
 
 %check
 # Four unit tests are failing for amqp1
-%{__python2} setup.py test || true
+stestr --test-path=./oslo_messaging/tests/functional run || true
 %if 0%{?with_python3}
-rm -rf .testrepository
-%{__python3} setup.py test || true
+stestr-3 --test-path=./oslo_messaging/tests/functional run || true
 %endif
 
 %files -n python2-%{pkg_name}
