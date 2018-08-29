@@ -58,13 +58,11 @@ BuildRequires: python2-stestr
 %if 0%{?fedora} > 0
 BuildRequires: python2-cachetools
 BuildRequires: python2-redis
-BuildRequires: python2-zmq
 BuildRequires: python2-kafka
 BuildRequires: python2-testscenarios
 %else
 BuildRequires: python-cachetools
 BuildRequires: python-redis
-BuildRequires: python-zmq
 BuildRequires: python-kafka
 BuildRequires: python-testscenarios
 %endif
@@ -176,7 +174,6 @@ BuildRequires: python3-pbr
 BuildRequires: python3-cachetools
 BuildRequires: python3-futurist
 BuildRequires: python3-redis
-BuildRequires: python3-zmq
 
 # Required for tests
 BuildRequires: python3-kafka
@@ -266,18 +263,14 @@ rm -fr doc/build/html/.buildinfo
 %install
 %if 0%{?with_python3}
 %py3_install
-for i in zmq-{broker,proxy} send-notification; do
-mv %{buildroot}%{_bindir}/oslo-messaging-$i %{buildroot}%{_bindir}/oslo-messaging-$i-%{python3_version}
-ln -s ./oslo-messaging-$i-%{python3_version} %{buildroot}%{_bindir}/oslo-messaging-$i-3
-done
+mv %{buildroot}%{_bindir}/oslo-messaging-send-notification %{buildroot}%{_bindir}/oslo-messaging-send-notification-%{python3_version}
+ln -s ./oslo-messaging-send-notification-%{python3_version} %{buildroot}%{_bindir}/oslo-messaging-send-notification-3
 %endif
 %py2_install
 
-for i in zmq-{broker,proxy} send-notification; do
-mv %{buildroot}%{_bindir}/oslo-messaging-$i %{buildroot}%{_bindir}/oslo-messaging-$i-%{python2_version}
+mv %{buildroot}%{_bindir}/oslo-messaging-send-notification %{buildroot}%{_bindir}/oslo-messaging-send-notification-%{python2_version}
 ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i-2
 ln -s ./oslo-messaging-$i-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-$i
-done
 
 %check
 # Four unit tests are failing for amqp1
@@ -291,11 +284,7 @@ stestr-3 run || true
 %doc README.rst
 %{python2_sitelib}/oslo_messaging
 %{python2_sitelib}/*.egg-info
-%{_bindir}/oslo-messaging-zmq-broker
-%{_bindir}/oslo-messaging-zmq-proxy
 %{_bindir}/oslo-messaging-send-notification
-%{_bindir}/oslo-messaging-zmq-broker-2*
-%{_bindir}/oslo-messaging-zmq-proxy-2*
 %{_bindir}/oslo-messaging-send-notification-2*
 %exclude %{python2_sitelib}/oslo_messaging/tests
 
@@ -314,8 +303,6 @@ stestr-3 run || true
 %doc README.rst
 %{python3_sitelib}/oslo_messaging
 %{python3_sitelib}/*.egg-info
-%{_bindir}/oslo-messaging-zmq-broker-3*
-%{_bindir}/oslo-messaging-zmq-proxy-3*
 %{_bindir}/oslo-messaging-send-notification-3*
 %exclude %{python3_sitelib}/oslo_messaging/tests
 
