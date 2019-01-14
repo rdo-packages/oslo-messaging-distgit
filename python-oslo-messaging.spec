@@ -1,5 +1,5 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
-%if 0%{?fedora} >= 24
+%if 0%{?fedora} || 0%{?rhel} > 7
 %global with_python3 1
 %endif
 %global with_doc 1
@@ -55,7 +55,7 @@ BuildRequires: python2-subunit
 BuildRequires: python2-tenacity
 BuildRequires: python2-testtools
 BuildRequires: python2-stestr
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-cachetools
 BuildRequires: python2-redis
 BuildRequires: python2-kafka
@@ -84,7 +84,7 @@ Requires:   python2-stevedore >= 1.20.0
 Requires:   python2-tenacity
 Requires:   python2-kombu >= 1:4.0.0
 Requires:   python2-eventlet
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 Requires:   python2-cachetools
 Requires:   python2-futures >= 3.0
 Requires:   python2-monotonic >= 0.6
@@ -126,7 +126,7 @@ BuildRequires: python2-six
 BuildRequires: python2-stevedore
 BuildRequires: python2-fixtures
 BuildRequires: python2-kombu >= 1:4.0.0
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-pyyaml
 %else
 BuildRequires: PyYAML
@@ -152,7 +152,7 @@ Requires:      python2-oslo-utils
 Requires:      python2-oslotest
 Requires:      python2-testtools
 Requires:      python2-stestr
-%if 0%{?fedora} > 0
+%if 0%{?fedora} || 0%{?rhel} > 7
 Requires:      python2-kafka
 Requires:      python2-testscenarios
 %else
