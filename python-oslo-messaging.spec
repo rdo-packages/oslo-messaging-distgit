@@ -52,7 +52,6 @@ BuildRequires: python2-oslo-utils
 BuildRequires: python2-oslotest
 BuildRequires: python2-pifpaf
 BuildRequires: python2-subunit
-BuildRequires: python2-tenacity
 BuildRequires: python2-testtools
 BuildRequires: python2-stestr
 %if 0%{?fedora} || 0%{?rhel} > 7
@@ -69,7 +68,7 @@ BuildRequires: python-testscenarios
 
 
 Requires:   python2-pbr
-Requires:   python2-amqp >= 2.3.0
+Requires:   python2-amqp >= 2.4.1
 Requires:   python2-debtcollector >= 1.2.0
 Requires:   python2-futurist >= 1.2.0
 Requires:   python2-oslo-config >= 2:5.2.0
@@ -81,18 +80,15 @@ Requires:   python2-oslo-log >= 3.36.0
 Requires:   python2-oslo-middleware >= 3.31.0
 Requires:   python2-six >= 1.10.0
 Requires:   python2-stevedore >= 1.20.0
-Requires:   python2-tenacity
 Requires:   python2-kombu >= 1:4.0.0
 Requires:   python2-eventlet
 %if 0%{?fedora} || 0%{?rhel} > 7
 Requires:   python2-cachetools
-Requires:   python2-futures >= 3.0
 Requires:   python2-monotonic >= 0.6
 Requires:   python2-pyyaml
 Requires:   python2-webob >= 1.7.1
 %else
 Requires:   python-cachetools
-Requires:   python-futures >= 3.0
 Requires:   python-monotonic >= 0.6
 Requires:   PyYAML
 Requires:   python-webob >= 1.7.1
@@ -184,16 +180,14 @@ BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslotest
 BuildRequires: python3-pifpaf
-BuildRequires: python3-tenacity
 BuildRequires: python3-stestr
 BuildRequires: python3-testscenarios
 BuildRequires: python3-testtools
 
 Requires:   python3-pbr
-Requires:   python3-amqp >= 2.3.0
+Requires:   python3-amqp >= 2.4.1
 Requires:   python3-debtcollector >= 1.2.0
 Requires:   python3-futurist >= 1.2.0
-Requires:   python3-monotonic >= 0.6
 Requires:   python3-oslo-config >= 2:5.2.0
 Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-oslo-serialization >= 2.18.0
@@ -203,7 +197,6 @@ Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-middleware >= 3.31.0
 Requires:   python3-six >= 1.10.0
 Requires:   python3-stevedore >= 1.20.0
-Requires:   python3-tenacity
 Requires:   python3-PyYAML
 Requires:   python3-kombu >= 1:4.0.0
 Requires:   python3-eventlet
