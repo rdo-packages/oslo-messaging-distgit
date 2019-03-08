@@ -19,8 +19,8 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    XXX
-Release:    XXX
+Version:    9.5.0
+Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
 License:    ASL 2.0
@@ -304,3 +304,6 @@ stestr-3 run || true
 %endif
 
 %changelog
+* Fri Mar 08 2019 RDO <dev@lists.rdoproject.org> 9.5.0-1
+- Update to 9.5.0
+
