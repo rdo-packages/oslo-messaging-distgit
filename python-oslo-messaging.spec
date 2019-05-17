@@ -93,7 +93,7 @@ Requires:   python-monotonic >= 0.6
 Requires:   PyYAML
 Requires:   python-webob >= 1.7.1
 %endif
-%if 0%{rhosp} == 0
+%if 0%{rhosp} == 0 || 0%{?rhel} > 7
 Requires:   python-pyngus
 %endif
 
@@ -127,7 +127,7 @@ BuildRequires: python2-pyyaml
 %else
 BuildRequires: PyYAML
 %endif
-%if 0%{rhosp} == 0
+%if 0%{rhosp} == 0 || 0%{?rhel} > 7
 BuildRequires: python-pyngus
 %endif
 
@@ -202,7 +202,7 @@ Requires:   python3-kombu >= 1:4.0.0
 Requires:   python3-eventlet
 Requires:   python3-cachetools
 Requires:   python3-webob >= 1.7.1
-%if 0%{rhosp} == 0
+%if 0%{rhosp} == 0 || 0%{?rhel} > 7
 Requires:   python3-pyngus
 %endif
 
