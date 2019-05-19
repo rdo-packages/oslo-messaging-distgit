@@ -19,7 +19,7 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    8.1.2
+Version:    8.1.3
 Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
@@ -324,6 +324,9 @@ stestr-3 run || true
 %endif
 
 %changelog
+* Sun May 19 2019 RDO <dev@lists.rdoproject.org> 8.1.3-1
+- Update to 8.1.3
+
 * Thu Sep 27 2018 RDO <dev@lists.rdoproject.org> 8.1.2-1
 - Update to 8.1.2
 
