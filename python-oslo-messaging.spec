@@ -304,3 +304,4 @@ stestr-3 run || true
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/oslo.messaging/commit/?id=46cdd88358c355d3ba94e21bc3a072ce87b1a5c2
