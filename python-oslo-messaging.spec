@@ -248,6 +248,7 @@ rm -rf {test-,}requirements.txt
 %endif
 
 %if 0%{?with_doc}
+export PYTHONPATH=.
 sphinx-build -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.buildinfo
