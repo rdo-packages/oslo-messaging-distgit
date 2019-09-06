@@ -41,7 +41,7 @@ BuildRequires: python2-futurist
 # Required for tests
 BuildRequires: python2-fixtures
 BuildRequires: python2-hacking
-BuildRequires: python2-kombu >= 1:4.0.0
+BuildRequires: python2-kombu >= 1:4.6.1
 BuildRequires: python2-mock
 BuildRequires: python2-mox3
 BuildRequires: python2-oslo-config
@@ -75,12 +75,11 @@ Requires:   python2-oslo-config >= 2:5.2.0
 Requires:   python2-oslo-utils >= 3.33.0
 Requires:   python2-oslo-serialization >= 2.18.0
 Requires:   python2-oslo-service >= 1.24.0
-Requires:   python2-oslo-i18n >= 3.15.3
 Requires:   python2-oslo-log >= 3.36.0
 Requires:   python2-oslo-middleware >= 3.31.0
 Requires:   python2-six >= 1.10.0
 Requires:   python2-stevedore >= 1.20.0
-Requires:   python2-kombu >= 1:4.0.0
+Requires:   python2-kombu >= 1:4.6.1
 Requires:   python2-eventlet
 %if 0%{?fedora} || 0%{?rhel} > 7
 Requires:   python2-cachetools
@@ -113,7 +112,6 @@ BuildRequires: python2-oslo-sphinx
 
 # for API autodoc
 BuildRequires: python2-oslo-config
-BuildRequires: python2-oslo-i18n
 BuildRequires: python2-oslo-middleware
 BuildRequires: python2-oslo-serialization
 BuildRequires: python2-oslo-service
@@ -121,7 +119,7 @@ BuildRequires: python2-oslo-utils
 BuildRequires: python2-six
 BuildRequires: python2-stevedore
 BuildRequires: python2-fixtures
-BuildRequires: python2-kombu >= 1:4.0.0
+BuildRequires: python2-kombu >= 1:4.6.1
 %if 0%{?fedora} || 0%{?rhel} > 7
 BuildRequires: python2-pyyaml
 %else
@@ -192,13 +190,12 @@ Requires:   python3-oslo-config >= 2:5.2.0
 Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-service >= 1.24.0
-Requires:   python3-oslo-i18n >= 3.15.3
 Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-middleware >= 3.31.0
 Requires:   python3-six >= 1.10.0
 Requires:   python3-stevedore >= 1.20.0
 Requires:   python3-PyYAML
-Requires:   python3-kombu >= 1:4.0.0
+Requires:   python3-kombu >= 1:4.6.1
 Requires:   python3-eventlet
 Requires:   python3-cachetools
 Requires:   python3-webob >= 1.7.1
