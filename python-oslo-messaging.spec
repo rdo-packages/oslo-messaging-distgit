@@ -41,6 +41,7 @@ BuildRequires: python2-futurist
 # Required for tests
 BuildRequires: python2-fixtures
 BuildRequires: python2-hacking
+# Move >= 4.6.1 once it's available in RHEL8 and Fedora
 BuildRequires: python2-kombu >= 1:4.0.0
 BuildRequires: python2-mock
 BuildRequires: python2-mox3
@@ -75,7 +76,6 @@ Requires:   python2-oslo-config >= 2:5.2.0
 Requires:   python2-oslo-utils >= 3.33.0
 Requires:   python2-oslo-serialization >= 2.18.0
 Requires:   python2-oslo-service >= 1.24.0
-Requires:   python2-oslo-i18n >= 3.15.3
 Requires:   python2-oslo-log >= 3.36.0
 Requires:   python2-oslo-middleware >= 3.31.0
 Requires:   python2-six >= 1.10.0
@@ -113,7 +113,6 @@ BuildRequires: python2-oslo-sphinx
 
 # for API autodoc
 BuildRequires: python2-oslo-config
-BuildRequires: python2-oslo-i18n
 BuildRequires: python2-oslo-middleware
 BuildRequires: python2-oslo-serialization
 BuildRequires: python2-oslo-service
@@ -192,7 +191,6 @@ Requires:   python3-oslo-config >= 2:5.2.0
 Requires:   python3-oslo-utils >= 3.33.0
 Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-service >= 1.24.0
-Requires:   python3-oslo-i18n >= 3.15.3
 Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-middleware >= 3.31.0
 Requires:   python3-six >= 1.10.0
