@@ -1,7 +1,16 @@
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# Macros for py2/py3 compatibility
 %if 0%{?fedora} || 0%{?rhel} > 7
-%global with_python3 1
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
 %endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
+
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
 #guard for including python-pyngus (OSP 12 does not ship python-pyngus)
 %global rhosp 0
@@ -30,203 +39,133 @@ BuildArch:  noarch
 
 BuildRequires: git
 
-%package -n python2-%{pkg_name}
+%package -n python%{pyver}-%{pkg_name}
 Summary:    OpenStack common messaging library
-%{?python_provide:%python_provide python2-%{pkg_name}}
+%{?python_provide:%python_provide python%{pyver}-%{pkg_name}}
+%if %{pyver} == 3
+Obsoletes: python2-%{pkg_name} < %{version}-%{release}
+%endif
 
-BuildRequires: python2-devel
-BuildRequires: python2-setuptools
-BuildRequires: python2-pbr
-BuildRequires: python2-futurist
+BuildRequires: python%{pyver}-devel
+BuildRequires: python%{pyver}-setuptools
+BuildRequires: python%{pyver}-pbr
+BuildRequires: python%{pyver}-futurist
 # Required for tests
-BuildRequires: python2-fixtures
-BuildRequires: python2-hacking
-# Move >= 4.6.1 once it's available in RHEL8 and Fedora
-BuildRequires: python2-kombu >= 1:4.0.0
-BuildRequires: python2-mock
-BuildRequires: python2-mox3
-BuildRequires: python2-oslo-config
-BuildRequires: python2-oslo-middleware
-BuildRequires: python2-oslo-serialization
-BuildRequires: python2-oslo-service
-BuildRequires: python2-oslo-utils
-BuildRequires: python2-oslotest
-BuildRequires: python2-pifpaf
-BuildRequires: python2-subunit
-BuildRequires: python2-testtools
-BuildRequires: python2-stestr
-%if 0%{?fedora} || 0%{?rhel} > 7
-BuildRequires: python2-cachetools
-BuildRequires: python2-redis
-BuildRequires: python2-kafka
-BuildRequires: python2-testscenarios
-%else
-BuildRequires: python-cachetools
-BuildRequires: python-redis
+BuildRequires: python%{pyver}-fixtures
+BuildRequires: python%{pyver}-hacking
+BuildRequires: python%{pyver}-kombu >= 1:4.0.0
+BuildRequires: python%{pyver}-mock
+BuildRequires: python%{pyver}-mox3
+BuildRequires: python%{pyver}-oslo-config
+BuildRequires: python%{pyver}-oslo-middleware
+BuildRequires: python%{pyver}-oslo-serialization
+BuildRequires: python%{pyver}-oslo-service
+BuildRequires: python%{pyver}-oslo-utils
+BuildRequires: python%{pyver}-oslotest
+BuildRequires: python%{pyver}-pifpaf
+BuildRequires: python%{pyver}-subunit
+BuildRequires: python%{pyver}-testtools
+BuildRequires: python%{pyver}-stestr
+BuildRequires: python%{pyver}-cachetools
+BuildRequires: python%{pyver}-redis
+# Handle python2 exception
+%if %{pyver} == 2
 BuildRequires: python-kafka
-BuildRequires: python-testscenarios
+%else
+BuildRequires: python%{pyver}-kafka
 %endif
 
 
-Requires:   python2-pbr
-Requires:   python2-amqp >= 2.4.1
-Requires:   python2-debtcollector >= 1.2.0
-Requires:   python2-futurist >= 1.2.0
-Requires:   python2-oslo-config >= 2:5.2.0
-Requires:   python2-oslo-utils >= 3.33.0
-Requires:   python2-oslo-serialization >= 2.18.0
-Requires:   python2-oslo-service >= 1.24.0
-Requires:   python2-oslo-log >= 3.36.0
-Requires:   python2-oslo-middleware >= 3.31.0
-Requires:   python2-six >= 1.10.0
-Requires:   python2-stevedore >= 1.20.0
-Requires:   python2-kombu >= 1:4.0.0
-Requires:   python2-eventlet
-%if 0%{?fedora} || 0%{?rhel} > 7
-Requires:   python2-cachetools
-Requires:   python2-monotonic >= 0.6
-Requires:   python2-pyyaml
-Requires:   python2-webob >= 1.7.1
-%else
-Requires:   python-cachetools
-Requires:   python-monotonic >= 0.6
+Requires:   python%{pyver}-pbr
+Requires:   python%{pyver}-amqp >= 2.4.1
+Requires:   python%{pyver}-debtcollector >= 1.2.0
+Requires:   python%{pyver}-futurist >= 1.2.0
+Requires:   python%{pyver}-oslo-config >= 2:5.2.0
+Requires:   python%{pyver}-oslo-utils >= 3.33.0
+Requires:   python%{pyver}-oslo-serialization >= 2.18.0
+Requires:   python%{pyver}-oslo-service >= 1.24.0
+Requires:   python%{pyver}-oslo-i18n >= 3.15.3
+Requires:   python%{pyver}-oslo-log >= 3.36.0
+Requires:   python%{pyver}-oslo-middleware >= 3.31.0
+Requires:   python%{pyver}-six >= 1.10.0
+Requires:   python%{pyver}-stevedore >= 1.20.0
+Requires:   python%{pyver}-kombu >= 1:4.0.0
+Requires:   python%{pyver}-eventlet
+Requires:   python%{pyver}-cachetools
+Requires:   python%{pyver}-monotonic >= 0.6
+Requires:   python%{pyver}-webob >= 1.7.1
+# Handle python2 exception
+%if %{pyver} == 2
 Requires:   PyYAML
-Requires:   python-webob >= 1.7.1
+%else
+Requires:   python%{pyver}-PyYAML
 %endif
 %if 0%{rhosp} == 0 && 0%{?rhel} < 8
 Requires:   python-pyngus
 %endif
 
-%description -n python2-%{pkg_name}
+%description -n python%{pyver}-%{pkg_name}
 %{common_desc}
 
 The Oslo messaging API supports RPC and notifications over a number of
 different messaging transports.
 
 %if 0%{?with_doc}
-%package -n python-%{pkg_name}-doc
+%package -n python%{pyver}-%{pkg_name}-doc
 Summary:    Documentation for OpenStack common messaging library
+%{?python_provide:%python_provide python%{pyver}-%{pkg_name}-doc}
 
-BuildRequires: python2-sphinx
-BuildRequires: python2-openstackdocstheme
+BuildRequires: python%{pyver}-sphinx
+BuildRequires: python%{pyver}-openstackdocstheme
 
 # for API autodoc
-BuildRequires: python2-oslo-config
-BuildRequires: python2-oslo-middleware
-BuildRequires: python2-oslo-serialization
-BuildRequires: python2-oslo-service
-BuildRequires: python2-oslo-utils
-BuildRequires: python2-six
-BuildRequires: python2-stevedore
-BuildRequires: python2-fixtures
-BuildRequires: python2-kombu >= 1:4.0.0
-%if 0%{?fedora} || 0%{?rhel} > 7
-BuildRequires: python2-pyyaml
-%else
+BuildRequires: python%{pyver}-oslo-config
+BuildRequires: python%{pyver}-oslo-i18n
+BuildRequires: python%{pyver}-oslo-middleware
+BuildRequires: python%{pyver}-oslo-serialization
+BuildRequires: python%{pyver}-oslo-service
+BuildRequires: python%{pyver}-oslo-utils
+BuildRequires: python%{pyver}-six
+BuildRequires: python%{pyver}-stevedore
+BuildRequires: python%{pyver}-fixtures
+BuildRequires: python%{pyver}-kombu >= 1:4.0.0
+# Handle python2 exception
+%if %{pyver} == 2
 BuildRequires: PyYAML
+%else
+BuildRequires: python%{pyver}-PyYAML
 %endif
 %if 0%{rhosp} == 0 && 0%{?rhel} < 8
 BuildRequires: python-pyngus
 %endif
 
 
-%description -n python-%{pkg_name}-doc
+%description -n python%{pyver}-%{pkg_name}-doc
 Documentation for the oslo.messaging library.
 %endif
 
-%package -n python2-%{pkg_name}-tests
+%package -n python%{pyver}-%{pkg_name}-tests
 Summary:    Tests for OpenStack common messaging library
 
-Requires:      python2-%{pkg_name} = %{version}-%{release}
-Requires:      python2-oslo-config
-Requires:      python2-oslo-middleware
-Requires:      python2-oslo-serialization
-Requires:      python2-oslo-service
-Requires:      python2-oslo-utils
-Requires:      python2-oslotest
-Requires:      python2-testtools
-Requires:      python2-stestr
-%if 0%{?fedora} || 0%{?rhel} > 7
-Requires:      python2-kafka
-Requires:      python2-testscenarios
+Requires:      python%{pyver}-%{pkg_name} = %{version}-%{release}
+Requires:      python%{pyver}-oslo-config
+Requires:      python%{pyver}-oslo-middleware
+Requires:      python%{pyver}-oslo-serialization
+Requires:      python%{pyver}-oslo-service
+Requires:      python%{pyver}-oslo-utils
+Requires:      python%{pyver}-oslotest
+Requires:      python%{pyver}-testtools
+Requires:      python%{pyver}-stestr
+Requires:      python%{pyver}-testscenarios
+# Handle python2 exception
+%if %{pyver} == 2
+BuildRequires: python-kafka
 %else
-Requires:      python-kafka
-Requires:      python-testscenarios
+BuildRequires: python%{pyver}-kafka
 %endif
 
-%description -n python2-%{pkg_name}-tests
+%description -n python%{pyver}-%{pkg_name}-tests
 %{common_desc1}
-
-%if 0%{?with_python3}
-%package -n python3-%{pkg_name}
-Summary:    OpenStack common messaging library
-%{?python_provide:%python_provide python3-%{pkg_name}}
-
-BuildRequires: python3-devel
-BuildRequires: python3-setuptools
-BuildRequires: python3-pbr
-BuildRequires: python3-cachetools
-BuildRequires: python3-futurist
-BuildRequires: python3-redis
-
-# Required for tests
-BuildRequires: python3-kafka
-BuildRequires: python3-oslo-config
-BuildRequires: python3-oslo-middleware
-BuildRequires: python3-oslo-serialization
-BuildRequires: python3-oslo-service
-BuildRequires: python3-oslo-utils
-BuildRequires: python3-oslotest
-BuildRequires: python3-pifpaf
-BuildRequires: python3-stestr
-BuildRequires: python3-testscenarios
-BuildRequires: python3-testtools
-
-Requires:   python3-pbr
-Requires:   python3-amqp >= 2.4.1
-Requires:   python3-debtcollector >= 1.2.0
-Requires:   python3-futurist >= 1.2.0
-Requires:   python3-oslo-config >= 2:5.2.0
-Requires:   python3-oslo-utils >= 3.33.0
-Requires:   python3-oslo-serialization >= 2.18.0
-Requires:   python3-oslo-service >= 1.24.0
-Requires:   python3-oslo-log >= 3.36.0
-Requires:   python3-oslo-middleware >= 3.31.0
-Requires:   python3-six >= 1.10.0
-Requires:   python3-stevedore >= 1.20.0
-Requires:   python3-PyYAML
-Requires:   python3-kombu >= 1:4.0.0
-Requires:   python3-eventlet
-Requires:   python3-cachetools
-Requires:   python3-webob >= 1.7.1
-%if 0%{rhosp} == 0 && 0%{?rhel} < 8
-Requires:   python3-pyngus
-%endif
-
-%description -n python3-%{pkg_name}
-%{common_desc}
-
-The Oslo messaging API supports RPC and notifications over a number of
-different messaging transports.
-
-%package -n python3-%{pkg_name}-tests
-Summary:    Tests for OpenStack common messaging library
-
-Requires:      python3-%{pkg_name} = %{version}-%{release}
-Requires:      python3-kafka
-Requires:      python3-oslo-config
-Requires:      python3-oslo-middleware
-Requires:      python3-oslo-serialization
-Requires:      python3-oslo-service
-Requires:      python3-oslo-utils
-Requires:      python3-oslotest
-Requires:      python3-stestr
-Requires:      python3-testscenarios
-Requires:      python3-testtools
-
-%description -n python3-%{pkg_name}-tests
-%{common_desc1}
-%endif
 
 %description
 %{common_desc}
@@ -239,66 +178,36 @@ Requires:      python3-testtools
 rm -rf {test-,}requirements.txt
 
 %build
-%py2_build
-%if 0%{?with_python3}
-%py3_build
-%endif
+%{pyver_build}
 
 %if 0%{?with_doc}
-export PYTHONPATH=.
-sphinx-build -b html doc/source doc/build/html
+sphinx-build-%{pyver} -b html doc/source doc/build/html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.buildinfo
 %endif
 
 %install
-%if 0%{?with_python3}
-%py3_install
-mv %{buildroot}%{_bindir}/oslo-messaging-send-notification %{buildroot}%{_bindir}/oslo-messaging-send-notification-%{python3_version}
-ln -s ./oslo-messaging-send-notification-%{python3_version} %{buildroot}%{_bindir}/oslo-messaging-send-notification-3
-%endif
-%py2_install
-
-mv %{buildroot}%{_bindir}/oslo-messaging-send-notification %{buildroot}%{_bindir}/oslo-messaging-send-notification-%{python2_version}
-ln -s ./oslo-messaging-send-notification-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-send-notification-2
-ln -s ./oslo-messaging-send-notification-%{python2_version} %{buildroot}%{_bindir}/oslo-messaging-send-notification
+%{pyver_install}
 
 %check
 # Four unit tests are failing for amqp1
-stestr run || true
-%if 0%{?with_python3}
-stestr-3 run || true
-%endif
+stestr-%{pyver} run || true
 
-%files -n python2-%{pkg_name}
+%files -n python%{pyver}-%{pkg_name}
 %license LICENSE
 %doc README.rst
-%{python2_sitelib}/oslo_messaging
-%{python2_sitelib}/*.egg-info
+%{pyver_sitelib}/oslo_messaging
+%{pyver_sitelib}/*.egg-info
 %{_bindir}/oslo-messaging-send-notification
-%{_bindir}/oslo-messaging-send-notification-2*
-%exclude %{python2_sitelib}/oslo_messaging/tests
+%exclude %{pyver_sitelib}/oslo_messaging/tests
 
 %if 0%{?with_doc}
-%files -n python-%{pkg_name}-doc
+%files -n python%{pyver}-%{pkg_name}-doc
 %license LICENSE
 %doc doc/build/html
 %endif
 
-%files -n python2-%{pkg_name}-tests
-%{python2_sitelib}/oslo_messaging/tests
-
-%if 0%{?with_python3}
-%files -n python3-%{pkg_name}
-%license LICENSE
-%doc README.rst
-%{python3_sitelib}/oslo_messaging
-%{python3_sitelib}/*.egg-info
-%{_bindir}/oslo-messaging-send-notification-3*
-%exclude %{python3_sitelib}/oslo_messaging/tests
-
-%files -n python3-%{pkg_name}-tests
-%{python3_sitelib}/oslo_messaging/tests
-%endif
+%files -n python%{pyver}-%{pkg_name}-tests
+%{pyver_sitelib}/oslo_messaging/tests
 
 %changelog
