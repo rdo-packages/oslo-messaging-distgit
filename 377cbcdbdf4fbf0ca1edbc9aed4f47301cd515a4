@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "81dafe6b_ac28c94a",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T16:37:20Z",
+      "side": 1,
+      "message": "i18n is not longer a dependency:\n\nhttps://github.com/openstack/oslo.messaging/commit/4f385720d7d43aadfaff7c6f41b0534312b23ba8#diff-b4ef698db8ca845e5845c4618278f29a",
+      "range": {
+        "startLine": 84,
+        "startChar": 32,
+        "endLine": 84,
+        "endChar": 36
+      },
+      "revId": "377cbcdbdf4fbf0ca1edbc9aed4f47301cd515a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "afde5543_2c2097f4",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T16:37:20Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 101,
+        "startChar": 0,
+        "endLine": 101,
+        "endChar": 25
+      },
+      "revId": "377cbcdbdf4fbf0ca1edbc9aed4f47301cd515a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ef243bad_82a4d98b",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T16:37:20Z",
+      "side": 1,
+      "message": "we need a conditional here. For pyver\u003d\u003d2 this should be python-pyngus and for pyver\u003d\u003d3 python%{pyver}-pyngus",
+      "range": {
+        "startLine": 135,
+        "startChar": 0,
+        "endLine": 135,
+        "endChar": 28
+      },
+      "revId": "377cbcdbdf4fbf0ca1edbc9aed4f47301cd515a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "686f0a3d_21f2f039",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T16:37:20Z",
+      "side": 1,
+      "message": "missing major-version executable.",
+      "revId": "377cbcdbdf4fbf0ca1edbc9aed4f47301cd515a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c9df151_d6977258",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T16:37:20Z",
+      "side": 1,
+      "message": "missing major-version executable.",
+      "range": {
+        "startLine": 198,
+        "startChar": 0,
+        "endLine": 198,
+        "endChar": 43
+      },
+      "revId": "377cbcdbdf4fbf0ca1edbc9aed4f47301cd515a4",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
