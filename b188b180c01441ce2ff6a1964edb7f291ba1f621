@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18d06d34_e3a213ab",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2019-10-01T16:37:20Z",
+      "side": 1,
+      "message": "doc subpackage should be python-",
+      "revId": "b188b180c01441ce2ff6a1964edb7f291ba1f621",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
