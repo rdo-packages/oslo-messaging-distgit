@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d44c3888_39325c4b",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-10-02T08:10:43Z",
+      "side": 1,
+      "message": "this was not needed",
+      "range": {
+        "startLine": 96,
+        "startChar": 32,
+        "endLine": 96,
+        "endChar": 36
+      },
+      "revId": "eae3358b01fe4d87de0f2f6cf83fc89fc7b063d2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c3fd52f_a19504c4",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-10-02T08:10:43Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 128,
+        "startChar": 32,
+        "endLine": 128,
+        "endChar": 36
+      },
+      "revId": "eae3358b01fe4d87de0f2f6cf83fc89fc7b063d2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "644107e7_72798470",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-10-02T08:10:43Z",
+      "side": 1,
+      "message": "also need to handle fedora:- https://centos.logs.rdoproject.org/weirdo-generic-puppet-openstack-scenario001/11443/weirdo-project/puppet.txt.gz#_Oct_01_16_00_36",
+      "revId": "eae3358b01fe4d87de0f2f6cf83fc89fc7b063d2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
