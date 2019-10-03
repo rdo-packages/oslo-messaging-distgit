@@ -13,7 +13,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
 #guard for including python-pyngus (OSP 12 does not ship python-pyngus)
-%global rhosp 0
+%global rhosp 1
 
 %global common_desc \
 The Oslo project intends to produce a python library containing \
@@ -97,7 +97,7 @@ Requires:   PyYAML
 Requires:   python%{pyver}-PyYAML
 %endif
 
-%if 0%{rhosp} == 0 && 0%{?rhel} >= 7
+%if (0%{rhosp} == 0 && 0%{?rhel} >= 7)|| 0%{?fedora} >= 28
 # Handle python2 exception
 %if %{pyver} == 2
 Requires:   python-pyngus
@@ -136,7 +136,7 @@ BuildRequires: PyYAML
 BuildRequires: python%{pyver}-PyYAML
 %endif
 
-%if 0%{rhosp} == 0 && 0%{?rhel} >= 7
+%if (0%{rhosp} == 0 && 0%{?rhel} >= 7)|| 0%{?fedora} >= 28
 # Handle python2 exception
 %if %{pyver} == 2
 BuildRequires: python-pyngus
