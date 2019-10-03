@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "fd79efc7_a360afbd",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2019-10-03T20:02:30Z",
+      "side": 1,
+      "message": "It should really be a soft-dep, which are not available in RHEL 7 RPM. What about creating a subpackage per messaging driver?",
+      "revId": "eae3358b01fe4d87de0f2f6cf83fc89fc7b063d2",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1c3fd52f_a19504c4",
         "filename": "python-oslo-messaging.spec",
         "patchSetId": 1
