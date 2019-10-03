@@ -97,7 +97,7 @@ Requires:   PyYAML
 Requires:   python%{pyver}-PyYAML
 %endif
 
-%if 0%{rhosp} == 0 && 0%{?rhel} >= 7
+%if 0%{rhosp} == 0
 # Handle python2 exception
 %if %{pyver} == 2
 Requires:   python-pyngus
@@ -136,7 +136,7 @@ BuildRequires: PyYAML
 BuildRequires: python%{pyver}-PyYAML
 %endif
 
-%if 0%{rhosp} == 0 && 0%{?rhel} >= 7
+%if 0%{rhosp} == 0
 # Handle python2 exception
 %if %{pyver} == 2
 BuildRequires: python-pyngus
