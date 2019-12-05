@@ -59,7 +59,6 @@ BuildRequires: python%{pyver}-oslo-serialization
 BuildRequires: python%{pyver}-oslo-service
 BuildRequires: python%{pyver}-oslo-utils
 BuildRequires: python%{pyver}-oslotest
-BuildRequires: python%{pyver}-pifpaf
 BuildRequires: python%{pyver}-subunit
 BuildRequires: python%{pyver}-testtools
 BuildRequires: python%{pyver}-stestr
