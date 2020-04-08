@@ -50,7 +50,7 @@ BuildRequires: python%{pyver}-futurist
 # Required for tests
 BuildRequires: python%{pyver}-fixtures
 BuildRequires: python%{pyver}-hacking
-BuildRequires: python%{pyver}-kombu >= 1:4.0.0
+BuildRequires: python%{pyver}-kombu >= 1:4.6.6
 BuildRequires: python%{pyver}-mock
 BuildRequires: python%{pyver}-mox3
 BuildRequires: python%{pyver}-oslo-config
@@ -73,21 +73,20 @@ BuildRequires: python%{pyver}-kafka
 
 
 Requires:   python%{pyver}-pbr
-Requires:   python%{pyver}-amqp >= 2.4.1
+Requires:   python%{pyver}-amqp >= 2.5.2
 Requires:   python%{pyver}-debtcollector >= 1.2.0
 Requires:   python%{pyver}-futurist >= 1.2.0
 Requires:   python%{pyver}-oslo-config >= 2:5.2.0
-Requires:   python%{pyver}-oslo-utils >= 3.33.0
+Requires:   python%{pyver}-oslo-utils >= 3.37.0
 Requires:   python%{pyver}-oslo-serialization >= 2.18.0
 Requires:   python%{pyver}-oslo-service >= 1.24.0
 Requires:   python%{pyver}-oslo-log >= 3.36.0
 Requires:   python%{pyver}-oslo-middleware >= 3.31.0
 Requires:   python%{pyver}-six >= 1.10.0
 Requires:   python%{pyver}-stevedore >= 1.20.0
-Requires:   python%{pyver}-kombu >= 1:4.0.0
+Requires:   python%{pyver}-kombu >= 1:4.6.6
 Requires:   python%{pyver}-eventlet
 Requires:   python%{pyver}-cachetools
-Requires:   python%{pyver}-monotonic >= 0.6
 Requires:   python%{pyver}-webob >= 1.7.1
 # Handle python2 exception
 %if %{pyver} == 2
@@ -157,7 +156,7 @@ Requires:      python%{pyver}-oslo-config
 Requires:      python%{pyver}-oslo-middleware
 Requires:      python%{pyver}-oslo-serialization
 Requires:      python%{pyver}-oslo-service
-Requires:      python%{pyver}-oslo-utils
+Requires:      python%{pyver}-oslo-utils >= 3.37.0
 Requires:      python%{pyver}-oslotest
 Requires:      python%{pyver}-testtools
 Requires:      python%{pyver}-stestr
