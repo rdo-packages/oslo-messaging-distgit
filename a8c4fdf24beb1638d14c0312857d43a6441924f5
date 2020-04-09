@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9adf76b3_cb2d1d50",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-04-09T12:53:46Z",
+      "side": 1,
+      "message": "can be removed",
+      "range": {
+        "startLine": 90,
+        "startChar": 0,
+        "endLine": 90,
+        "endChar": 43
+      },
+      "revId": "a8c4fdf24beb1638d14c0312857d43a6441924f5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
