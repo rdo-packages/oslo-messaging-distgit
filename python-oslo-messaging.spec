@@ -28,8 +28,8 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    10.2.0
-Release:    2%{?dist}
+Version:    10.2.1
+Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
 License:    ASL 2.0
@@ -219,6 +219,9 @@ stestr-%{pyver} run || true
 %{pyver_sitelib}/oslo_messaging/tests
 
 %changelog
+* Tue Jul 21 2020 RDO <dev@lists.rdoproject.org> 10.2.1-1
+- Update to 10.2.1
+
 * Thu Oct 03 2019 Joel Capitao <jcapitao@redhat.com> 10.2.0-2
 - Removed python2 subpackages in no el7 distros
 
