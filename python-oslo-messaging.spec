@@ -66,7 +66,6 @@ Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-service >= 1.24.0
 Requires:   python3-oslo-log >= 3.36.0
 Requires:   python3-oslo-middleware >= 3.31.0
-Requires:   python3-six >= 1.10.0
 Requires:   python3-stevedore >= 1.20.0
 Requires:   python3-kombu >= 1:4.6.6
 Requires:   python3-eventlet
@@ -97,7 +96,6 @@ BuildRequires: python3-oslo-middleware
 BuildRequires: python3-oslo-serialization
 BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
-BuildRequires: python3-six
 BuildRequires: python3-stevedore
 BuildRequires: python3-fixtures
 BuildRequires: python3-kombu >= 1:4.0.0
