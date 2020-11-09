@@ -19,8 +19,8 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    12.5.0
-Release:    2%{?dist}
+Version:    12.5.1
+Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
 License:    ASL 2.0
@@ -192,6 +192,9 @@ stestr-3 run || true
 %{python3_sitelib}/oslo_messaging/tests
 
 %changelog
+* Mon Nov 09 2020 RDO <dev@lists.rdoproject.org> 12.5.1-1
+- Update to 12.5.1
+
 * Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 12.5.0-2
 - Enable sources tarball validation using GPG signature.
 
