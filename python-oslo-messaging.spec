@@ -84,7 +84,7 @@ Requires:   python3-kombu >= 1:4.6.6
 Requires:   python3-eventlet
 Requires:   python3-cachetools
 Requires:   python3-webob >= 1.7.1
-Requires:   python3-PyYAML
+Requires:   python3-yaml >= 3.13
 
 %if 0%{rhosp} == 0
 Requires:   python3-pyngus
