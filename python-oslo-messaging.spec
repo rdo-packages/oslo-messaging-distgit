@@ -56,6 +56,7 @@ BuildRequires: python3-kombu >= 1:4.6.6
 BuildRequires: python3-mock
 BuildRequires: python3-mox3
 BuildRequires: python3-oslo-config
+BuildRequires: python3-oslo-metrics
 BuildRequires: python3-oslo-middleware
 BuildRequires: python3-oslo-serialization
 BuildRequires: python3-oslo-service
@@ -78,6 +79,7 @@ Requires:   python3-oslo-utils >= 3.37.0
 Requires:   python3-oslo-serialization >= 2.18.0
 Requires:   python3-oslo-service >= 1.24.0
 Requires:   python3-oslo-log >= 3.36.0
+Requires:   python3-oslo-metrics >= 0.2.1
 Requires:   python3-oslo-middleware >= 3.31.0
 Requires:   python3-stevedore >= 1.20.0
 Requires:   python3-kombu >= 1:4.6.6
