@@ -54,7 +54,6 @@ BuildRequires: python3-fixtures
 BuildRequires: python3-hacking
 BuildRequires: python3-kombu >= 1:4.6.6
 BuildRequires: python3-mock
-BuildRequires: python3-mox3
 BuildRequires: python3-oslo-config
 BuildRequires: python3-oslo-metrics
 BuildRequires: python3-oslo-middleware
