@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c5e8f31a_a93ae6e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-06-28T09:44:12Z",
+      "side": 1,
+      "message": "2023-06-28 09:36:25.960326 | rdo-centos-8-stream | 2023-06-28 09:36:25,960 INFO:dlrn-build-mock:DEBUG: Exception occurred:\n2023-06-28 09:36:25.961144 | rdo-centos-8-stream | 2023-06-28 09:36:25,961 INFO:dlrn-build-mock:DEBUG:   File \"/usr/lib/python3.9/site-packages/oslo_config/sphinxext.py\", line 491, in resolve_xref\n2023-06-28 09:36:25.961362 | rdo-centos-8-stream | 2023-06-28 09:36:25,961 INFO:dlrn-build-mock:DEBUG:     env.domaindata[\u0027oslo.config\u0027][\u0027groups\u0027][target],\n2023-06-28 09:36:25.961498 | rdo-centos-8-stream | 2023-06-28 09:36:25,961 INFO:dlrn-build-mock:DEBUG: KeyError: \u0027oslo_messaging_amqp\u0027",
+      "revId": "6f9cdda97684865c30b949b41acacf0e1d2e4d54",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
