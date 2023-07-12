@@ -17,7 +17,7 @@
 
 %global with_doc 1
 #guard for including python-pyngus (OSP 12 does not ship python-pyngus)
-%global rhosp 0
+%global rhosp 1
 
 %global common_desc \
 The Oslo project intends to produce a python library containing \
