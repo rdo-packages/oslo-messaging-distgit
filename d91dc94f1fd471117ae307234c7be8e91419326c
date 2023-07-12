@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8cacd2c9_c763109a",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2023-07-12T10:40:28Z",
+      "side": 0,
+      "message": "For this to work we need to add pyngus to excluded_brs or we will get pyngus as a BR unconditionally.",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 6
+      },
+      "revId": "d91dc94f1fd471117ae307234c7be8e91419326c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
