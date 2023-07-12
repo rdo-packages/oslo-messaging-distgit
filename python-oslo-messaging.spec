@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
+%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 %global with_doc 1
@@ -19,7 +19,7 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    12.13.0
+Version:    12.13.1
 Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
@@ -194,6 +194,9 @@ stestr-3 run || true
 %{python3_sitelib}/oslo_messaging/tests
 
 %changelog
+* Wed Jul 12 2023 RDO <dev@lists.rdoproject.org> 12.13.1-1
+- Update to 12.13.1
+
 * Mon Mar 14 2022 RDO <dev@lists.rdoproject.org> 12.13.0-1
 - Update to 12.13.0
 
