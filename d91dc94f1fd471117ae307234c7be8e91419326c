@@ -22,6 +22,30 @@
       },
       "revId": "d91dc94f1fd471117ae307234c7be8e91419326c",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1e693b4b_baa80d8e",
+        "filename": "python-oslo-messaging.spec",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-12T12:07:34Z",
+      "side": 0,
+      "message": "Good catch, I fixed it by adding and requiring the amqp1 extra",
+      "parentUuid": "8cacd2c9_c763109a",
+      "range": {
+        "startLine": 118,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 6
+      },
+      "revId": "d91dc94f1fd471117ae307234c7be8e91419326c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
