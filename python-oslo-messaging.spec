@@ -32,7 +32,7 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    14.3.1
+Version:    14.4.1
 Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
@@ -177,6 +177,9 @@ rm -f oslo_messaging/tests/functional/test_rabbitmq.py
 %{python3_sitelib}/oslo_messaging/tests
 
 %changelog
+* Wed Sep 27 2023 RDO <dev@lists.rdoproject.org> 14.4.1-1
+- Update to 14.4.1
+
 * Tue Sep 12 2023 RDO <dev@lists.rdoproject.org> 14.3.1-1
 - Update to 14.3.1
 
