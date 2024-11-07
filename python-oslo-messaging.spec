@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0xf8675126e2411e7748dd46662fc2093e4682645f
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 # we are excluding some BRs from automatic generator
@@ -32,7 +32,7 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    14.7.1
+Version:    14.7.2
 Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
@@ -177,6 +177,9 @@ rm -f oslo_messaging/tests/functional/test_rabbitmq.py
 %{python3_sitelib}/oslo_messaging/tests
 
 %changelog
+* Thu Nov 07 2024 RDO <dev@lists.rdoproject.org> 14.7.2-1
+- Update to 14.7.2
+
 * Wed Jul 24 2024 RDO <dev@lists.rdoproject.org> 14.7.1-1
 - Update to 14.7.1
 
