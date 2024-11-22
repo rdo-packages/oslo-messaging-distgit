@@ -59,10 +59,6 @@ BuildRequires: pyproject-rpm-macros
 %package -n python3-%{pkg_name}
 Summary:    OpenStack common messaging library
 
-%if 0%{rhosp} == 0
-Requires:      python3-%{pkg_name}+amqp1 = %{version}-%{release}
-%endif
-
 %description -n python3-%{pkg_name}
 %{common_desc}
 
@@ -152,11 +148,7 @@ rm -fr doc/build/html/.buildinfo
 rm -f oslo_messaging/tests/drivers/test_impl_kafka.py
 # nothing provides pifpaf module needed by test_rabbitmq
 rm -f oslo_messaging/tests/functional/test_rabbitmq.py
-%tox -e %{default_toxenv} -- -- --exclude-regex '(oslo_messaging.tests.notify.test_notifier.TestMessagingNotifierRetry.test_notifier_retry_connection_fails_kafka|oslo_messaging.tests.drivers.test_amqp_driver.TestCyrusAuthentication.test_authentication*)'
-
-%if 0%{rhosp} == 0
-%pyproject_extras_subpkg -n python3-%{pkg_name} amqp1
-%endif
+%tox -e %{default_toxenv} -- -- --exclude-regex '(oslo_messaging.tests.notify.test_notifier.TestMessagingNotifierRetry.test_notifier_retry_connection_fails_kafka)'
 
 %files -n python3-%{pkg_name}
 %license LICENSE
