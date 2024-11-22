@@ -169,3 +169,4 @@ rm -f oslo_messaging/tests/functional/test_rabbitmq.py
 %{python3_sitelib}/oslo_messaging/tests
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/oslo.messaging/commit/402cc29333e0a58fc6d395fd8e71e398d7544fb6
