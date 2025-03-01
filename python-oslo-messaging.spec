@@ -78,11 +78,6 @@ Documentation for the oslo.messaging library.
 Summary:    Tests for OpenStack common messaging library
 
 Requires:      python3-%{pkg_name} = %{version}-%{release}
-Requires:      python3-oslo-config
-Requires:      python3-oslo-middleware
-Requires:      python3-oslo-serialization
-Requires:      python3-oslo-service
-Requires:      python3-oslo-utils >= 3.37.0
 Requires:      python3-oslotest
 Requires:      python3-testtools
 Requires:      python3-stestr
