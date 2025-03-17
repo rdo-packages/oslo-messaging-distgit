@@ -1,7 +1,9 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+%{?dlrn: %global tarsources oslo.messaging}
+%{!?dlrn: %global tarsources oslo_messaging}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order pifpaf
 
@@ -32,16 +34,16 @@ Tests for the OpenStack common messaging library.
 %global pkg_name oslo-messaging
 
 Name:       python-oslo-messaging
-Version:    XXX
-Release:    XXX
+Version:    16.1.0
+Release:    1%{?dist}
 Summary:    OpenStack common messaging library
 
 License:    Apache-2.0
 URL:        https://launchpad.net/oslo
-Source0:    https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:    https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source101:        https://tarballs.openstack.org/%{pypi_name}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 BuildArch:  noarch
@@ -95,7 +97,7 @@ Requires:      python3-testscenarios
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
 # FIXME: workaround required to build
-%autosetup -n %{pypi_name}-%{upstream_version} -S git
+%autosetup -n %{tarsources}-%{upstream_version} -S git
 
 
 sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
@@ -164,3 +166,6 @@ rm -f oslo_messaging/tests/functional/test_rabbitmq.py
 %{python3_sitelib}/oslo_messaging/tests
 
 %changelog
+* Mon Mar 17 2025 RDO <dev@lists.rdoproject.org> 16.1.0-1
+- Update to 16.1.0
+
